@@ -31,6 +31,8 @@ Heart disease prediction is critical for early diagnosis and treatment. This pro
 2. Place the datasets in your Google Drive in the following structure:
 Google Drive/ └── ML_Project/ ├── heart.csv └── heart.dat
 
+3. Run ML_Project.ipynb with Google Colab
+
 ---
 
 ## Models and Evaluation

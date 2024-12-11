@@ -23,12 +23,12 @@ Heart disease prediction is critical for early diagnosis and treatment. This pro
 ## Dataset Setup
 
 1. Download the datasets:
-   - [`heart.csv`](https://link-to-heart-csv)
-   - [`heart.dat`](https://link-to-heart-dat)
+  Kaggle Heart Disease Dataset - [`heart.csv`](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)
+  UCI Statlog Heart Dataset - [`heart.dat`](https://archive.ics.uci.edu/dataset/145/statlog+heart)
    
 2. Place the datasets in your Google Drive in the following structure:
 
-
+Google Drive/ └── ML_Project/ ├── heart.csv └── heart.dat
 ---
 
 ## Models and Evaluation

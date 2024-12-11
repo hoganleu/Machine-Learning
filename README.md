@@ -1,46 +1,111 @@
-# Heart Disease Prediction with Machine Learning
+# Heart Disease Prediction using Machine Learning Models
 
-## Overview
-This project aims to predict heart disease using two datasets: `heart.csv` and `heart.dat`. Machine learning techniques, particularly Random Forest classifiers, were employed to analyze these datasets. The project focuses on baseline model performance, hyperparameter tuning, and feature importance analysis to improve prediction accuracy.
+This project aims to predict heart disease using two datasets (`heart.csv` and `heart.dat`) and multiple machine learning models. The models include Random Forest (Baseline and Hyperparameter Tuning), Multilayer Perceptron (MLP), and Support Vector Machine (SVM).
 
-## Datasets
-- **heart.csv**: A well-balanced dataset with sufficient data size. It achieved high accuracy in predictions due to well-represented features.
-- **heart.dat**: A smaller dataset with moderate accuracy, likely impacted by data size and class imbalance.
+---
 
-## Key Results
-- **heart.csv**:
-  - Baseline Accuracy: **98.54%**
-  - Optimized Accuracy: **98.54%** (No significant improvement due to already high baseline accuracy)
-- **heart.dat**:
-  - Baseline Accuracy: **79.63%**
-  - Optimized Accuracy: **83.33%** (Achieved through hyperparameter tuning)
+## Table of Contents
+- [Introduction](#introduction)
+- [Dataset Setup](#dataset-setup)
+- [Models and Evaluation](#models-and-evaluation)
+- [Results Summary](#results-summary)
+- [Future Work](#future-work)
+- [How to Run the Code](#how-to-run-the-code)
 
-## Feature Importance
-The following visualizations show the feature importance for both datasets:
+---
 
-### Feature Importance - heart.csv Dataset
-![Feature Importance - heart.csv](heart_csv_feature_importance.png)
+## Introduction
 
-### Feature Importance - heart.dat Dataset
-![Feature Importance - heart.dat](heart_dat_feature_importance.png)
+Heart disease prediction is critical for early diagnosis and treatment. This project explores the effectiveness of different machine learning models on two datasets of varying quality and size. The goal is to evaluate model performance and identify the most suitable approaches.
 
-## Methodology
-1. **Data Preprocessing**:
-   - One-hot encoding for categorical variables.
-   - Standardization of features.
-   - Train-test split with an 80-20 ratio.
-2. **Baseline Models**:
-   - Random Forest Classifiers were trained on both datasets to establish baseline performance.
-3. **Hyperparameter Tuning**:
-   - Techniques like `GridSearchCV` and `RandomizedSearchCV` were used to optimize the Random Forest models.
-4. **Evaluation Metrics**:
-   - Accuracy, Precision, Recall, and F1-Score were used to assess model performance.
+---
 
-## Detailed Report
-For a detailed explanation of the methodology, results, and analysis, refer to the [CVPR-Formatted Report](Heart_Disease_Prediction_Report.pdf).
+## Dataset Setup
 
-## Getting Started
-To reproduce the results, follow these steps:
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/yourusername/heart-disease-prediction.git
+1. Download the datasets:
+   - [`heart.csv`](https://link-to-heart-csv)
+   - [`heart.dat`](https://link-to-heart-dat)
+   
+2. Place the datasets in your Google Drive in the following structure:
+
+
+---
+
+## Models and Evaluation
+
+The following machine learning models were implemented and evaluated:
+
+1. **Baseline Models (Random Forest)**
+- Baseline models provide a starting point for performance comparison.
+- Evaluated on both datasets (`heart.csv` and `heart.dat`).
+
+2. **Hyperparameter Tuning**
+- RandomizedSearchCV and GridSearchCV were used to optimize Random Forest parameters.
+
+3. **Multilayer Perceptron (MLP)**
+- A simple deep learning model trained and evaluated on both datasets.
+
+4. **Support Vector Machine (SVM)**
+- SVM with an RBF kernel was trained and evaluated on standardized datasets.
+
+---
+
+## Results Summary
+
+| Model                     | Dataset    | Accuracy | Precision | Recall | F1-Score | Observations |
+|---------------------------|------------|----------|-----------|--------|----------|--------------|
+| **Baseline (RF)**         | heart.csv  | 98.54%   | ~99%      | ~99%   | ~99%     | Exceptional performance, indicating high data quality and minimal class imbalance. |
+| **Baseline (RF)**         | heart.dat  | 79.63%   | ~79%      | ~79%   | ~79%     | Moderate performance, affected by smaller dataset and class imbalance. |
+| **Hyperparameter Tuning** | heart.csv  | 98.54%   | ~99%      | ~99%   | ~99%     | No significant improvement due to already high baseline accuracy. |
+| **Hyperparameter Tuning** | heart.dat  | 83.33%   | ~83%      | ~83%   | ~83%     | Moderate improvement achieved with parameter optimization. |
+| **MLP**                   | heart.csv  | 98.54%   | 0.99      | 0.99   | 0.99     | High accuracy, suitable for well-processed and balanced datasets. |
+| **MLP**                   | heart.dat  | 61.11%   | 0.31      | 0.50   | 0.38     | Poor performance on imbalanced and smaller datasets; struggles with minority class recall. |
+| **SVM**                   | heart.csv  | 88.78%   | 0.89      | 0.89   | 0.89     | Balanced performance, slightly lower than MLP, showcasing SVM's robustness on standardized data. |
+| **SVM**                   | heart.dat  | 88.89%   | 0.89      | 0.87   | 0.88     | Better performance than MLP on imbalanced datasets; still limited in minority class recall. |
+
+---
+
+## Future Work
+
+- **Dataset Improvements**:
+- Implement data augmentation techniques like SMOTE.
+- Increase dataset size by acquiring additional data sources.
+
+- **Model Enhancements**:
+- Explore advanced algorithms such as Gradient Boosting, XGBoost, or ensemble methods.
+- Investigate transfer learning for smaller datasets like `heart.dat`.
+
+- **Pipeline Refinement**:
+- Conduct detailed cross-validation experiments for robust performance validation.
+- Automate hyperparameter tuning for optimal performance.
+
+---
+
+## How to Run the Code
+
+1. **Install Required Libraries**:
+- Ensure the following Python libraries are installed:
+  ```bash
+  pip install numpy pandas scikit-learn
+  ```
+
+2. **Set Up Datasets**:
+- Download the datasets from the links provided above.
+- Place the datasets in your Google Drive under the following structure:
+  ```
+  Google Drive/
+  └── ML_Project/
+      ├── heart.csv
+      └── heart.dat
+  ```
+
+3. **Run the Python Script**:
+- Use the provided script to train and evaluate the models:
+  ```bash
+  python ml_heart_disease_project.py
+  ```
+
+---
+
+
+
